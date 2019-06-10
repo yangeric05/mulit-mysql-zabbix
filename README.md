@@ -34,17 +34,17 @@ visudo -f zabbix
 5. Test the script on the agent.
 
 ```
-zabbix_agentd -t mysql.questions[3306]
-zabbix_agentd -t mysql.questions[3307]
-zabbix_agentd -t mysql.questions[3308]
+zabbix_agentd -t multi.questions[3306]
+zabbix_agentd -t multi.questions[3307]
+zabbix_agentd -t multi.questions[3308]
 ```
 
 6. Test the script on the server.
 
 ```
-zabbix_get -s <agent-ip> -P <zabbix-agent-port> -k mysql.questions[3306]
-zabbix_get -s <agent-ip> -P <zabbix-agent-port> -k mysql.questions[3307]
-zabbix_get -s <agent-ip> -P <zabbix-agent-port> -k mysql.questions[3308]
+zabbix_get -s <agent-ip> -P <zabbix-agent-port> -k multi.questions[3306]
+zabbix_get -s <agent-ip> -P <zabbix-agent-port> -k multi.questions[3307]
+zabbix_get -s <agent-ip> -P <zabbix-agent-port> -k multi.questions[3308]
 ```
 
 7. Import the xml template to the Zabbix web interface.
