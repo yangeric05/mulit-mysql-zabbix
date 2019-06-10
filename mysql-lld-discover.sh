@@ -2,7 +2,10 @@
 
 ## Prints a JSON array of port numbers all used by mysqld instances.
 
-res=`sudo /bin/netstat -lntp | awk '/mysqld/{print$4}' | sed "s/://g"`
+#get ports for centos 6
+#res=`sudo /bin/netstat -lntp | awk '/mysqld/{print $4}' | sed "s/://g"`
+#for centos 7
+res=`sudo /bin/netstat -lntp | awk -F "[ :]+" '/mysqld/ {print $5}'`
 
 port=($res)
 
